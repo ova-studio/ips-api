@@ -6,6 +6,7 @@ use Closure;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Handler\CurlHandler;
 use GuzzleHttp\Client;
+use OvaStudio\IpsApi\Endpoints\Forums;
 use OvaStudio\IpsApi\Endpoints\System;
 use OvaStudio\IpsApi\Exceptions\AppUnavailableException;
 use OvaStudio\IpsApi\Exceptions\BadRequestException;
@@ -166,5 +167,10 @@ class IpsApi
     public function system() : System
     {
         return new System($this);
+    }
+
+    public function forums() : Forums
+    {
+        return new Forums($this);
     }
 }
