@@ -12,6 +12,7 @@ class TestCase extends BaseTestCase
         parent::setUp();
 
         config([ 'services.ips.base_uri' => 'https://forum.zdsimulator.com' ]);
+        config([ 'services.ips.default_user' => 5107 ]);
 
         /** @noinspection LaravelFunctionsInspection */
         config([ 'services.ips.api_key' => env('IPS_API_KEY') ]);

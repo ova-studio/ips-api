@@ -6,6 +6,7 @@ use Closure;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Handler\CurlHandler;
 use GuzzleHttp\Client;
+use OvaStudio\IpsApi\Endpoints\System;
 use OvaStudio\IpsApi\Exceptions\AppUnavailableException;
 use OvaStudio\IpsApi\Exceptions\BadRequestException;
 use OvaStudio\IpsApi\Exceptions\BannedException;
@@ -159,5 +160,11 @@ class IpsApi
                 return $handler($request, $options);
             };
         };
+    }
+
+    // Endpoints
+    public function system() : System
+    {
+        return new System($this);
     }
 }
